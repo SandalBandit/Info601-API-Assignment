@@ -1,12 +1,11 @@
-// Rick and Morty API: https://rickandmortyapi.com/
-// Testing an API
+// Game of Thrones API: https://thronesapi.com/
 
 // Function that fetches our characters based on the name from the input field
 function fetchCharacters() {
   const inputValue = document.getElementById('character-input').value;
 
   // using Fetch to get the api characters
-  fetch(`https://rickandmortyapi.com/api/character/?name=${inputValue}`)
+  fetch(`https://thronesapi.com/api/v2/Characters/{id}`)
     .then(resp => resp.json())
     .then(data => {
       formatCharacters(data.results);
