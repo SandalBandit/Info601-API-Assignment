@@ -1,7 +1,7 @@
 # Game of Thrones API
 Testing of Game of Thrones API by https://thronesapi.com/
 
-Using of the API, we are able to retrive characters by their id [0-52]
+Usage of the API, we are able to retrieve characters by their id [0-52]
 
 Assignment 3: API by Dylan Martin - 20518465
 
