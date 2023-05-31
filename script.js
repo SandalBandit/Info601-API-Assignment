@@ -1,24 +1,45 @@
 // Game of Thrones API: https://thronesapi.com/
+// Testing an API
 
-// Function that fetches our characters based on the name from the input field
-function fetchCharacters() {
-  const inputValue = document.getElementById('character-input').value;
+    // Function to create character card
+    function createCharacterCard(character) {
+      var card = document.createElement('div');
+      card.className = 'character-card';
 
-  // using Fetch to get the api characters
-  fetch(`https://thronesapi.com/api/v2/Characters/{id}`)
-    .then(resp => resp.json())
-    .then(data => {
-      formatCharacters(data.results);
-    });
-}
+      var image = document.createElement('img');
+      image.src = character.imageUrl;
+      image.alt = character.fullName;
+      card.appendChild(image);
 
-// Function that formats the data that has been returned from our character fetch (and appends it to the DOM)
-function formatCharacters(characters) {
-  const charDiv = document.getElementById('characters');
-  charDiv.innerHTML = '';
+      var name = document.createElement('h2');
+      name.textContent = character.fullName;
+      card.appendChild(name);
 
-  // foreach to get all the characters
-  characters.forEach(character => {
-    charDiv.innerHTML += `<div><img src="${character.image}"><h2>${character.name}</h2></div>`;
-  });
-}
+      var title = document.createElement('h3');
+      title.textContent = character.title;
+      card.appendChild(title);
+
+      var family = document.createElement('p');
+      family.textContent = 'Family: ' + character.family;
+      card.appendChild(family);
+
+      return card;
+    }
+
+    // Function to render character
+    function renderCharacter(character) {
+      var characterContainer = document.getElementById('character-container');
+      characterContainer.innerHTML = ''; // Clear previous result
+
+      var characterCard = createCharacterCard(character);
+      characterContainer.appendChild(characterCard);
+    }
+
+    // Function to fetch character data from API
+    function fetchCharacter() {
+      var characterId = document.getElementById('character-input').value;
+
+      fetch('https://thronesapi.com/api/v2/Characters/' + characterId)
+        .then(response => response.json())
+        .then(data => renderCharacter(data));
+    }
