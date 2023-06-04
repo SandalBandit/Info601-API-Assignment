@@ -3,6 +3,6 @@ Testing of Game of Thrones API by https://thronesapi.com/
 
 Usage of the API, we are able to retrieve characters by their id [0-52]
 
-INFO601 API Assignment 3: by Dylan Martin - 20518465
+INFO601 API Assignment 3: by Dylan M - 20518465
 
 ![bg](https://github.com/SandalBandit/Info601-API-Assignment/assets/119099353/6ea33e69-4bb0-4ab2-9d2c-761fec798903)
